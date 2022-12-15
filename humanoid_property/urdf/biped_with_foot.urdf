@@ -1,0 +1,1022 @@
+<robot
+  name="biped">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.032427 -7.3918E-11 -0.035454"
+        rpy="0 0 0" />
+      <mass
+        value="1.5243" />
+      <inertia
+        ixx="0.0065088"
+        ixy="1.2448E-11"
+        ixz="0.00074863"
+        iyy="0.0067767"
+        iyz="1.2924E-11"
+        izz="0.0023018" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/torso.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <link
+    name="head_p">
+    <inertial>
+      <origin
+        xyz="-5.5511E-17 5.5511E-17 -0.023536"
+        rpy="0 0 0" />
+      <mass
+        value="0.0091975" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/head_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/head_p.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="head_p"
+    type="fixed">
+    <origin
+      xyz="0.0075 0 0.12157"
+      rpy="6.713E-16 6.9212E-18 1.1102E-16" />
+    <parent
+      link="torso" />
+    <child
+      link="head_p" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="head_t">
+    <inertial>
+      <origin
+        xyz="0.00078184 2.0234E-05 0.016088"
+        rpy="0 0 0" />
+      <mass
+        value="0.084099" />
+      <inertia
+        ixx="1.5435E-05"
+        ixy="1.3296E-09"
+        ixz="-2.5332E-06"
+        iyy="1.5134E-05"
+        iyz="5.1455E-08"
+        izz="1.5241E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/head_t.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/head_t.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="j_head_t"
+    type="fixed">
+    <origin
+      xyz="0 -0.00025 0"
+      rpy="1.4381E-16 -9.993E-17 -7.2164E-16" />
+    <parent
+      link="head_p" />
+    <child
+      link="head_t" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_hip_y">
+    <inertial>
+      <origin
+        xyz="-0.02001 -2.7756E-17 0.028495"
+        rpy="0 0 0" />
+      <mass
+        value="0.044523" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_y.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_hip_y"
+    type="revolute">
+    <origin
+      xyz="0 -0.06125 -0.2124"
+      rpy="-5.4531E-16 3.0739E-17 -1.6653E-16" />
+    <parent
+      link="torso" />
+    <child
+      link="leg_r_hip_y" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_hip_r">
+    <inertial>
+      <origin
+        xyz="-0.019939 8.1869E-05 -0.014803"
+        rpy="0 0 0" />
+      <mass
+        value="0.32716" />
+      <inertia
+        ixx="7.626E-06"
+        ixy="-5.5849E-07"
+        ixz="-1.0679E-05"
+        iyy="0.00018621"
+        iyz="-1.5134E-06"
+        izz="0.0001855" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_r.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_hip_r"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-3.9136E-16 4.0824E-19 5.5511E-17" />
+    <parent
+      link="leg_r_hip_y" />
+    <child
+      link="leg_r_hip_r" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_hip_p">
+    <inertial>
+      <origin
+        xyz="-4.7361E-05 0.00014667 -0.10143"
+        rpy="0 0 0" />
+      <mass
+        value="0.18783" />
+      <inertia
+        ixx="9.8966E-05"
+        ixy="-1.5606E-09"
+        ixz="2.1853E-07"
+        iyy="9.6525E-05"
+        iyz="1.7817E-06"
+        izz="2.459E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_hip_p.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_hip_p"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.4362E-16 7.3309E-16 -1.1102E-16" />
+    <parent
+      link="leg_r_hip_r" />
+    <child
+      link="leg_r_hip_p" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_knee">
+    <inertial>
+      <origin
+        xyz="6.1062E-16 6.9389E-17 -0.072"
+        rpy="0 0 0" />
+      <mass
+        value="0.047124" />
+      <inertia
+        ixx="3.4724E-05"
+        ixy="1.6941E-21"
+        ixz="6.3842E-20"
+        iyy="3.4724E-05"
+        iyz="-1.1327E-08"
+        izz="3.6947E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_knee.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_knee"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1265"
+      rpy="-1.3878E-16 -6.6613E-16 5.5511E-17" />
+    <parent
+      link="leg_r_hip_p" />
+    <child
+      link="leg_r_knee" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_ankle_p">
+    <inertial>
+      <origin
+        xyz="-0.019968 8.5312E-05 0.014812"
+        rpy="0 0 0" />
+      <mass
+        value="0.32697" />
+      <inertia
+        ixx="7.5839E-06"
+        ixy="-5.3256E-07"
+        ixz="1.0555E-05"
+        iyy="0.00018576"
+        iyz="1.5122E-06"
+        izz="0.00018509" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_ankle_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_ankle_p.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_ankle_p"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.144"
+      rpy="7.6328E-17 1.1102E-15 -5.5511E-16" />
+    <parent
+      link="leg_r_knee" />
+    <child
+      link="leg_r_ankle_p" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_ankle_r">
+    <inertial>
+      <origin
+        xyz="-0.02 1.1102E-16 -0.034645"
+        rpy="0 0 0" />
+      <mass
+        value="0.10036" />
+      <inertia
+        ixx="3.027E-06"
+        ixy="-1.0588E-22"
+        ixz="-3.7392E-20"
+        iyy="3.027E-06"
+        iyz="3.9343E-20"
+        izz="1.0081E-33" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_ankle_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_r_ankle_r.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_ankle_r"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.6422E-17 -2.1481E-15 -6.1062E-16" />
+    <parent
+      link="leg_r_ankle_p" />
+    <child
+      link="leg_r_ankle_r" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_r_foot">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.08 0.01"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.08 0.01"/>
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="r_foot"
+    type="fixed">
+    <origin
+      xyz="-0.02 0 -0.0425"
+      rpy="0 0 0" />
+    <parent
+      link="leg_r_ankle_r" />
+    <child
+      link="leg_r_foot" />
+  </joint>
+
+  <link
+    name="leg_l_hip_y">
+    <inertial>
+      <origin
+        xyz="-0.02001 -2.7756E-17 0.028495"
+        rpy="0 0 0" />
+      <mass
+        value="0.044523" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_y.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_hip_y"
+    type="revolute">
+    <origin
+      xyz="1E-05 0.06125 -0.2124"
+      rpy="2.9156E-16 -1.8495E-16 -6.6058E-15" />
+    <parent
+      link="torso" />
+    <child
+      link="leg_l_hip_y" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_l_hip_r">
+    <inertial>
+      <origin
+        xyz="-0.019942 -8.5263E-05 -0.014803"
+        rpy="0 0 0" />
+      <mass
+        value="0.32716" />
+      <inertia
+        ixx="7.6258E-06"
+        ixy="5.3184E-07"
+        ixz="-1.068E-05"
+        iyy="0.00018616"
+        iyz="1.5119E-06"
+        izz="0.00018545" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_r.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_hip_r"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.6241E-15 -9.9242E-15 -5.5511E-17" />
+    <parent
+      link="leg_l_hip_y" />
+    <child
+      link="leg_l_hip_r" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_l_hip_p">
+    <inertial>
+      <origin
+        xyz="-4.1448E-05 -0.00014445 -0.10143"
+        rpy="0 0 0" />
+      <mass
+        value="0.18783" />
+      <inertia
+        ixx="9.8966E-05"
+        ixy="8.6863E-10"
+        ixz="2.2891E-07"
+        iyy="9.6525E-05"
+        iyz="-1.8053E-06"
+        izz="2.4592E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_hip_p.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_hip_p"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.674E-15 7.4031E-14 1.1102E-16" />
+    <parent
+      link="leg_l_hip_r" />
+    <child
+      link="leg_l_hip_p" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_l_knee">
+    <inertial>
+      <origin
+        xyz="6.1062E-16 -2.7756E-17 -0.072"
+        rpy="0 0 0" />
+      <mass
+        value="0.047124" />
+      <inertia
+        ixx="3.4724E-05"
+        ixy="8.4703E-22"
+        ixz="7.2051E-20"
+        iyy="3.4724E-05"
+        iyz="-1.1327E-08"
+        izz="3.6947E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_knee.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_knee"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1265"
+      rpy="1.9993E-16 -6.4219E-14 0" />
+    <parent
+      link="leg_l_hip_p" />
+    <child
+      link="leg_l_knee" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_l_ankle_p">
+    <inertial>
+      <origin
+        xyz="-0.019964 -8.1917E-05 0.014812"
+        rpy="0 0 0" />
+      <mass
+        value="0.32697" />
+      <inertia
+        ixx="7.5841E-06"
+        ixy="5.5918E-07"
+        ixz="1.0554E-05"
+        iyy="0.0001858"
+        iyz="-1.5137E-06"
+        izz="0.00018513" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_ankle_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_ankle_p.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_ankle_p"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.144"
+      rpy="3.5172E-16 8.6649E-16 3.8858E-16" />
+    <parent
+      link="leg_l_knee" />
+    <child
+      link="leg_l_ankle_p" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+  <link
+    name="leg_l_ankle_r">
+    <inertial>
+      <origin
+        xyz="-0.02 -5.5511E-17 -0.034645"
+        rpy="0 0 0" />
+      <mass
+        value="0.10036" />
+      <inertia
+        ixx="3.027E-06"
+        ixy="0"
+        ixz="3.2225E-20"
+        iyy="3.027E-06"
+        iyz="8.1613E-21"
+        izz="6.4314E-34" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_ankle_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/meshes_biped/leg_l_ankle_r.STL" />
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_ankle_r"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="6.5861E-17 -2.1529E-15 -3.0087E-14" />
+    <parent
+      link="leg_l_ankle_p" />
+    <child
+      link="leg_l_ankle_r" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="16"
+      velocity="3" />
+  </joint>
+<link
+    name="leg_l_foot">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.08 0.01"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.08 0.01"/>
+      </geometry>
+    </collision>
+    <contact>
+      <lateral_friction value="1.0"/>
+      <restitution value="0.5"/>
+    </contact>
+  </link>
+  <joint
+    name="l_foot"
+    type="fixed">
+    <origin
+      xyz="-0.02 0 -0.0425"
+      rpy="0 0 0" />
+    <parent
+      link="leg_l_ankle_r" />
+    <child
+      link="leg_l_foot" />
+  </joint>
+</robot>

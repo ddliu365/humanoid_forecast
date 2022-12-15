@@ -1,0 +1,10 @@
+setup.py
+python/robot_properties_solo/__init__.py
+python/robot_properties_solo/config.py
+python/robot_properties_solo/gepetto_gui_loader.py
+python/robot_properties_solo/quadruped12wrapper.py
+python/robot_properties_solo.egg-info/PKG-INFO
+python/robot_properties_solo.egg-info/SOURCES.txt
+python/robot_properties_solo.egg-info/dependency_links.txt
+python/robot_properties_solo.egg-info/top_level.txt
+python/robot_properties_solo/config/package_config.ini

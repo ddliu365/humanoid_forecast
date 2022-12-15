@@ -1,0 +1,61 @@
+#!/bin/bash 
+
+# echo $0
+ 
+full_path=$(realpath $0)
+# echo $full_path
+
+dir_path=$(dirname $full_path)
+# echo $dir_path
+ 
+read -p 'setup python version: ' version
+
+while true; do 
+if [ $version -eq 2 ] 
+then
+	cd $dir_path
+	python setup.py install 
+	echo '#####################################'
+	echo Setting for humanoid_simulation done! 
+	echo '#####################################'
+
+	cd ../humanoid_control 
+	python setup.py install 
+	echo '#####################################'
+	echo  Setting for humanoid_control done! 
+	echo '#####################################'
+
+	cd ../humanoid_property
+	python setup.py install 
+	echo '#####################################'
+	echo  Setting for humanoid_property done! 
+	echo '#####################################'
+	break
+
+elif [ $version -eq 3 ]
+then
+	cd $dir_path
+	python3 setup.py install 
+	echo '#####################################'
+	echo Setting for humanoid_simulation done! 
+	echo '#####################################'
+
+	cd ../humanoid_control 
+	python3 setup.py install 
+	echo '#####################################'
+	echo  Setting for humanoid_control done! 
+	echo '#####################################'
+
+	cd ../humanoid_property
+	python3 setup.py install 
+	echo '#####################################'
+	echo  Setting for humanoid_property done! 
+	echo '#####################################'
+	break
+
+else 
+	echo python verson should be 2 or 3
+	read -p 'setup python version: ' version
+fi
+done
+

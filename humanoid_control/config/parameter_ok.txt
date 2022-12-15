@@ -1,0 +1,50 @@
+
+        # INTERNAL PARAMETER
+        self.isDisplay = isDisplay
+
+        self.step_width = 0.
+        self.com = np.array([0., 0., 0.])
+
+        self.idRfoot = 0.
+        self.idLfoot = 0.
+        self.idTorso = 0.
+        self.q = self.robot.q0
+        self.h_r_foot = 0.
+        self.f_r_foot = 0.
+        self.foot_length = 0.118
+        self.foot_width = 0.08
+        self.g = 9.8
+
+        # EXTERNAL PARAMETER
+        # PLANNER
+        self.step_num = 6
+        self.step_length = 0.1
+        self.step_height = 0.03
+        # Step offset in y direction: Positive means outward; Negative means inward
+        self.step_offset_y = 0.005
+        self.step_offset_x = 0.         # Step offset in x direciton: Positive means forward; Negative means backward
+        # contains the bound calculated from foot
+        self.cop_safe = 0.02
+        # CoP offset in y direction: Positive means outward; Negative means inward
+        self.cop_offset_y = -0.008
+        # CoP offset in x direction: Positive means forward; Negative means backward
+        self.cop_offset_x = self.foot_length/2 - self.cop_safe
+
+        # TRAJECTORY
+        self.delta_t = 0.008
+        self.num_iter_ss = 150          # number of iterations for a single support step
+        self.num_iter_ss_end = 100      # For last step minor change
+        # For a single support step: T_single = num_iter_ss * delta_t
+        # number of iterations for initial double support step
+        self.num_iter_ds_init = 200
+        self.num_iter_ds = 150          # number of iterations for a double support step
+        self.num_iter_ds_end = 90
+        # For a double support step: T_double = num_iter_ds * delta_t
+        # When putting foot down, keep it's original pose before next action
+        self.num_step_delay = 30
+        self.horizon_length = (self.step_num-1)*self.num_iter_ss + \
+            (self.step_num-1)*self.num_iter_ds + \
+            self.num_step_delay*(self.step_num-1) +\
+            self.num_iter_ds_init +\
+            self.num_iter_ds_end +\
+            self.num_iter_ss_end

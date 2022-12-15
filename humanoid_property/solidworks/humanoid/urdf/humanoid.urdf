@@ -1,0 +1,1103 @@
+<robot
+  name="humanoid">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="-0.000349101886439523 -1.25950180840384E-10 -1.59885458769077E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.891534385585763" />
+      <inertia
+        ixx="0.00950963811941008"
+        ixy="2.32156181825937E-11"
+        ixz="3.19932114113089E-05"
+        iyy="0.00697962867590947"
+        iyz="1.2611162190477E-11"
+        izz="0.00299398688935293" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="head_p">
+    <inertial>
+      <origin
+        xyz="0 -1.38777878078145E-17 -0.0235358644573578"
+        rpy="0 0 0" />
+      <mass
+        value="0.00919745164566108" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/head_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/head_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_head_p"
+    type="continuous">
+    <origin
+      xyz="0.00749999999999998 0 0.154592980337507"
+      rpy="-5.40227318867849E-16 3.26570417148563E-16 1.11022302462516E-16" />
+    <parent
+      link="torso" />
+    <child
+      link="head_p" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="head_t">
+    <inertial>
+      <origin
+        xyz="0.000362537622920267 6.79783928272948E-06 0.0434079674333546"
+        rpy="0 0 0" />
+      <mass
+        value="0.250310857747946" />
+      <inertia
+        ixx="0.000109893254796935"
+        ixy="6.15726205396447E-10"
+        ixz="-1.29430349863522E-06"
+        iyy="0.000109000514641629"
+        iyz="9.79402169676757E-08"
+        izz="9.33135190800595E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/head_t.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/head_t.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_head_t"
+    type="continuous">
+    <origin
+      xyz="0 -0.000250000000004302 0"
+      rpy="1.98830324825673E-16 -4.37592719611079E-16 -1.11022302462516E-16" />
+    <parent
+      link="head_p" />
+    <child
+      link="head_t" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leg_r_hip_y">
+    <inertial>
+      <origin
+        xyz="-0.0190000000000001 1.38777878078145E-17 0.0296849328442002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0310306790400135" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_y.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_hip_y"
+    type="continuous">
+    <origin
+      xyz="0 -0.0612500000000002 -0.179371019662496"
+      rpy="-3.41396994042176E-16 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg_r_hip_y" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg_r_hip_r">
+    <inertial>
+      <origin
+        xyz="-0.019938669370708 8.18688971842077E-05 -0.0148029204359108"
+        rpy="0 0 0" />
+      <mass
+        value="0.327163601832517" />
+      <inertia
+        ixx="7.62597114711918E-06"
+        ixy="-5.58485632325025E-07"
+        ixz="-1.06787629028056E-05"
+        iyy="0.000186208035995009"
+        iyz="-1.51343454864388E-06"
+        izz="0.000185497003559403" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_hip_r"
+    type="continuous">
+    <origin
+      xyz="0.000499999999999945 0 0"
+      rpy="1.13124042283043E-16 -2.61242557992875E-16 6.50156804127527E-17" />
+    <parent
+      link="leg_r_hip_y" />
+    <child
+      link="leg_r_hip_r" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg_r_hip_p">
+    <inertial>
+      <origin
+        xyz="-4.73613010784635E-05 0.000146666146782173 -0.10142537495828"
+        rpy="0 0 0" />
+      <mass
+        value="0.187828254323874" />
+      <inertia
+        ixx="9.89657264075224E-05"
+        ixy="-1.56062320516372E-09"
+        ixz="2.18524977200402E-07"
+        iyy="9.65248837003219E-05"
+        iyz="1.78170551469187E-06"
+        izz="2.45902731639314E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_hip_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_hip_p"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.13124042283043E-16 2.15500304946813E-16 -1.04264380931413E-17" />
+    <parent
+      link="leg_r_hip_r" />
+    <child
+      link="leg_r_hip_p" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leg_r_knee">
+    <inertial>
+      <origin
+        xyz="6.38378239159465E-16 3.46944695195361E-17 -0.0720000000000057"
+        rpy="0 0 0" />
+      <mass
+        value="0.0471244364483379" />
+      <inertia
+        ixx="3.47240331970275E-05"
+        ixy="2.08114259181434E-24"
+        ixz="6.38005899850235E-21"
+        iyy="3.47240295022831E-05"
+        iyz="-1.13268007040414E-08"
+        izz="3.69474441843329E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_knee"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.12650000000002"
+      rpy="-1.66533453693773E-16 -2.81587712202917E-16 4.90950377141293E-16" />
+    <parent
+      link="leg_r_hip_p" />
+    <child
+      link="leg_r_knee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leg_r_ankle_p">
+    <inertial>
+      <origin
+        xyz="-0.019967775832417 8.5312065049456E-05 0.0148115624874954"
+        rpy="0 0 0" />
+      <mass
+        value="0.326972712808706" />
+      <inertia
+        ixx="7.58393095523032E-06"
+        ixy="-5.32557584809158E-07"
+        ixz="1.05552686931237E-05"
+        iyy="0.00018575582149946"
+        iyz="1.51216245176917E-06"
+        izz="0.000185086455382627" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_ankle_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_ankle_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_ankle_p"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.144000000000011"
+      rpy="2.77555756156288E-17 9.37952628792816E-16 -4.34517316998388E-16" />
+    <parent
+      link="leg_r_knee" />
+    <child
+      link="leg_r_ankle_p" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="leg_r_ankle_r">
+    <inertial>
+      <origin
+        xyz="-0.0195052351132241 2.77555756156289E-17 -0.035336618625496"
+        rpy="0 0 0" />
+      <mass
+        value="0.0860342097154499" />
+      <inertia
+        ixx="1.55034338934217E-06"
+        ixy="1.90033281818973E-23"
+        ixz="-1.4360711995772E-09"
+        iyy="1.55034471956392E-06"
+        iyz="2.05154759951871E-20"
+        izz="1.33022174599019E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_ankle_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_r_ankle_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_r_ankle_r"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="2.4980018054066E-16 -1.39663998698079E-15 -5.70601140040284E-17" />
+    <parent
+      link="leg_r_ankle_p" />
+    <child
+      link="leg_r_ankle_r" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="leg_l_hip_y">
+    <inertial>
+      <origin
+        xyz="-0.0190000000000001 2.77555756156289E-17 0.0296849328442002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0310306790400135" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_y.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_y.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_hip_y"
+    type="continuous">
+    <origin
+      xyz="0 0.06125 -0.179371019662496"
+      rpy="-3.41725588386687E-16 1.40441582496151E-19 -4.79463341027122E-35" />
+    <parent
+      link="torso" />
+    <child
+      link="leg_l_hip_y" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="leg_l_hip_r">
+    <inertial>
+      <origin
+        xyz="-0.0199386693707081 8.18688971842285E-05 -0.0148029204359109"
+        rpy="0 0 0" />
+      <mass
+        value="0.327163601832517" />
+      <inertia
+        ixx="7.62597114711922E-06"
+        ixy="-5.5848563232473E-07"
+        ixz="-1.06787629028061E-05"
+        iyy="0.00018620803599501"
+        iyz="-1.51343454864384E-06"
+        izz="0.000185497003559404" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_hip_r"
+    type="continuous">
+    <origin
+      xyz="0.000499999999999973 0 0"
+      rpy="1.06513742723647E-16 -2.61266749644178E-16 5.93124751222884E-17" />
+    <parent
+      link="leg_l_hip_y" />
+    <child
+      link="leg_l_hip_r" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="leg_l_hip_p">
+    <inertial>
+      <origin
+        xyz="-4.73613010784912E-05 0.00014666614678216 -0.10142537495828"
+        rpy="0 0 0" />
+      <mass
+        value="0.187828254323874" />
+      <inertia
+        ixx="9.89657264075218E-05"
+        ixy="-1.5606232051685E-09"
+        ixz="2.18524977200414E-07"
+        iyy="9.65248837003213E-05"
+        iyz="1.78170551469191E-06"
+        izz="2.45902731639315E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_hip_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_hip_p"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.22687743945067E-16 1.9173736902261E-16 7.3408853928096E-17" />
+    <parent
+      link="leg_l_hip_r" />
+    <child
+      link="leg_l_hip_p" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leg_l_knee">
+    <inertial>
+      <origin
+        xyz="6.66133814775094E-16 0 -0.0720000000000058"
+        rpy="0 0 0" />
+      <mass
+        value="0.0471244364483379" />
+      <inertia
+        ixx="3.47240331970276E-05"
+        ixy="9.66282341202233E-23"
+        ixz="2.3450948943773E-20"
+        iyy="3.47240295022832E-05"
+        iyz="-1.13268007040071E-08"
+        izz="3.69474441841091E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_knee"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.1265"
+      rpy="-3.57980314686197E-17 -3.19189119579732E-16 4.53547757052351E-16" />
+    <parent
+      link="leg_l_hip_p" />
+    <child
+      link="leg_l_knee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leg_l_ankle_p">
+    <inertial>
+      <origin
+        xyz="-0.019967775832417 8.53120650494976E-05 0.0148115624874952"
+        rpy="0 0 0" />
+      <mass
+        value="0.326972712808706" />
+      <inertia
+        ixx="7.58393095523041E-06"
+        ixy="-5.3255758480949E-07"
+        ixz="1.05552686931235E-05"
+        iyy="0.000185755821499461"
+        iyz="1.51216245176921E-06"
+        izz="0.000185086455382628" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_ankle_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_ankle_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_ankle_p"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.144000000000011"
+      rpy="-3.64033007199883E-16 9.99200722162641E-16 -4.19735632408962E-16" />
+    <parent
+      link="leg_l_knee" />
+    <child
+      link="leg_l_ankle_p" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="leg_l_ankle_r">
+    <inertial>
+      <origin
+        xyz="-0.0195052351132241 2.77555756156289E-17 -0.0353366186254961"
+        rpy="0 0 0" />
+      <mass
+        value="0.0860342097154499" />
+      <inertia
+        ixx="1.55034338934221E-06"
+        ixy="-8.77836450737156E-24"
+        ixz="-1.4360711995815E-09"
+        iyy="1.55034471956396E-06"
+        iyz="-9.47688344929306E-21"
+        izz="1.33022174599813E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_ankle_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/leg_l_ankle_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_leg_l_ankle_r"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="2.4980018054066E-16 -1.02028117652055E-15 -1.7762186294493E-18" />
+    <parent
+      link="leg_l_ankle_p" />
+    <child
+      link="leg_l_ankle_r" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="arm_r_shou_p">
+    <inertial>
+      <origin
+        xyz="-0.00971572315740146 0.0232636812439506 0.00248658187310813"
+        rpy="0 0 0" />
+      <mass
+        value="0.0265049875032742" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_shou_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_shou_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_r_shou_p"
+    type="continuous">
+    <origin
+      xyz="0 -0.141338919000003 0.0828789803374983"
+      rpy="-3.41396994042176E-16 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="arm_r_shou_p" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="arm_r_shou_r">
+    <inertial>
+      <origin
+        xyz="-0.00693976228444074 6.95136029715132E-06 -0.0644461862877316"
+        rpy="0 0 0" />
+      <mass
+        value="0.233846079600851" />
+      <inertia
+        ixx="0.000818368072836307"
+        ixy="-4.28237606046068E-09"
+        ixz="3.48069980029282E-05"
+        iyy="0.000820992782660462"
+        iyz="1.75677549408268E-07"
+        izz="4.45058683602631E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_shou_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_shou_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_r_shou_r"
+    type="continuous">
+    <origin
+      xyz="-0.00010430412500001 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="arm_r_shou_p" />
+    <child
+      link="arm_r_shou_r" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="arm_r_elbow">
+    <inertial>
+      <origin
+        xyz="-0.00512670543361107 -0.00677518273179861 -0.105559166000223"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660036002352668" />
+      <inertia
+        ixx="0.000169149561079679"
+        ixy="4.66529988051345E-07"
+        ixz="1.3301246212797E-05"
+        iyy="0.00016998897319996"
+        iyz="-5.92548862075257E-06"
+        izz="1.25507514782128E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_r_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_r_elbow"
+    type="continuous">
+    <origin
+      xyz="-0.00416077518005581 0.000250000000000285 -0.155750000000015"
+      rpy="1.8590512822718E-16 1.07986536379556E-12 5.63893510830468E-15" />
+    <parent
+      link="arm_r_shou_r" />
+    <child
+      link="arm_r_elbow" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="arm_l_shou_p">
+    <inertial>
+      <origin
+        xyz="-0.00971574719965571 -0.0232636988074809 0.0024865068380911"
+        rpy="0 0 0" />
+      <mass
+        value="0.0265052286624269" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_shou_p.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_shou_p.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_l_shou_p"
+    type="continuous">
+    <origin
+      xyz="0 0.141338919000003 0.0828789803374986"
+      rpy="-3.41396994042176E-16 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="arm_l_shou_p" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="arm_l_shou_r">
+    <inertial>
+      <origin
+        xyz="-0.0069397622844411 6.95136013600939E-06 -0.064446186288791"
+        rpy="0 0 0" />
+      <mass
+        value="0.233846079603485" />
+      <inertia
+        ixx="0.000818368072859064"
+        ixy="-4.28237595602325E-09"
+        ixz="3.4806998003039E-05"
+        iyy="0.000820992782683196"
+        iyz="1.7567754639678E-07"
+        izz="4.45058683600795E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_shou_r.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_shou_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_l_shou_r"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="arm_l_shou_p" />
+    <child
+      link="arm_l_shou_r" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="arm_l_elbow">
+    <inertial>
+      <origin
+        xyz="-0.00512713985368951 0.00677513078810979 -0.105558133392576"
+        rpy="0 0 0" />
+      <mass
+        value="0.0660042396649518" />
+      <inertia
+        ixx="0.000169152316204233"
+        ixy="-4.66529921444557E-07"
+        ixz="1.33030657569409E-05"
+        iyy="0.000169992050899239"
+        iyz="5.92477580349948E-06"
+        izz="1.25529081427726E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid/meshes/arm_l_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_arm_l_elbow"
+    type="continuous">
+    <origin
+      xyz="-0.00416077518006452 0.000250000000001332 -0.15575000000001"
+      rpy="0 0 -8.09940774021887E-13" />
+    <parent
+      link="arm_l_shou_r" />
+    <child
+      link="arm_l_elbow" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

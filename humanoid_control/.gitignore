@@ -1,0 +1,17 @@
+
+*.pyc*
+*.npy*
+*.swp*
+*.csv*
+
+*.pytest_cache*
+*.ipynb_checkpoints*
+*.vscode*
+*.idea*
+*.pytest_cache*
+
+tutorial/
+humanoid_prev/
+build/
+
+*.DS_Store*

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>bipedsim</name>
+  <version>1.0.0</version>
+  <description>bipedsim</description>
+  <author email="ddliu@nyu.edu">ddliugit</author>
+  <maintainer email="ddliu@nyu.edu">ddliugit</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+  </export>
+</package>
